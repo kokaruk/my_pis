@@ -103,3 +103,4 @@ venv.bak/
 # mypy
 .mypy_cache/
 /hat_on_pi/app/conf/influx_connect.json
+grafana.ini
