@@ -5,30 +5,15 @@
 1. Download [etcher](https://www.balena.io/etcher/)
 2. Download latest version of [raspbian](https://www.raspberrypi.org/downloads/raspbian/)
 3. Burn image to sd card
-
-
-After initial boot, login as pi (default user)
-login: pi
-password: raspberry
-
-
+(on Catalina launch etcher via terminal `sudo /Applications/balenaEtcher.app/Contents/MacOS/balenaEtcher`)
 
 #### Enable ssh access
 
-1. Before inserting ssd fro the first time, SSH can be enabled by placing a file called ssh in to the boot folder. This flags the Pi to enable the SSH system on the next boot.
-2. On pi cli ``` raspi-config ``` and enable ssh interface
-
-
-### Tooling
-
-- change root user password
-```
-sudo su
-passwd
-```
-- restart / login as root```sudo reboot```
-
-- config locale and other settings ```raspi-config```
+1. Before inserting ssd for the first time, SSH can be enabled by placing a file called ssh in to the boot folder. This flags the Pi to enable the SSH on the next boot; OR
+2. After initial boot, login as pi (default user)
+login: `pi`
+password: `raspberry`
+On pi cli ``` raspi-config ``` and enable ssh interface
 
 ###Create new user / delete user pi
 
@@ -41,7 +26,7 @@ add user ```adduser _%USER%_```
 
 list groups wich pi is belonging ```cat /etc/group | grep pi```
 
-add new user to these groups ```sudo usermod -G *groups_from_list* %username%```
+add new user to these groups ```sudo usermod -G *all_groups_com_sep_from_list* %username%```
 
 delete pi user ```userdel -r pi```
 
@@ -51,9 +36,19 @@ visuo
 %user%  ALL=(ALL:ALL) ALL
 ```
 
-Change vim to show line numbers by default & vi behaviour (arrow keys and delete) ```vi ~/.vimrc```
+### Tooling
+
+- change root user password
+```
+sudo su
+passwd
+```
+- restart / login as root```sudo reboot```
+- config locale and other settings ```raspi-config```
 
 install full vim (vi tiny has no colour support) ```sudo apt install vim -y```
+
+Change vim to show line numbers by default & vi behaviour (arrow keys and delete) ```vi ~/.vimrc```
 
 Add:  
 ```
@@ -63,7 +58,7 @@ set nu
 set backspace=2
 ```
 
-Change shell from bash to zshell
+# Change shell from bash to zshell
 
 Run update scripts ```apt update && apt upgrade -y```
 
@@ -84,7 +79,7 @@ Install git ```apt install git -y```
 
 Install oh-my-zsh configuration framework ``` sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"```
 
-Install powerlevel9k zsh cli custom output theme ```git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k```
+Install powerlevel10k zsh cli custom output theme ```git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k```
 
 Install auto-suggestions and code-highlight zshell plugins
 ```
@@ -106,7 +101,7 @@ POWERLEVEL9K_PYTHON_ICON="\U1F40D"
 
 b) change theme
 ```
-ZSH_THEME="powerlevel9k/powerlevel9k"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 ```
 
 c) Update plugins
@@ -132,7 +127,7 @@ ssh-copy-id <USERNAME>@<IP-ADDRESS>
 
 ##### for fun 
 install cowsay / fortune / lolcat
-add to zshrc: alias cow="fortune | cowsay | lolcat"
+add to zshrc: ```alias cow="fortune | cowsay | lolcat"```
 
 make cow every time terminal starts append 'cow'at the end of zshrc
 
