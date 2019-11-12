@@ -81,7 +81,7 @@ Install oh-my-zsh configuration framework ``` sh -c "$(wget https://raw.githubus
 
 Install powerlevel10k zsh cli custom output theme ```git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k```
 
-Install auto-suggestions and code-highlight zshell plugins
+Install auto-suggestions and code-highlight z-shell plugins
 ```
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting

@@ -21,6 +21,7 @@ Use pi hole to resolve local dns
 1. Create a new hosts file -- sudo vi /etc/hosts.kokaruk
 2. Add IP addresses followed by the local hostname you'd like to resolve, one per line. Write out and exit.
 
+```
 192.168.50.75 kokaruk.com
 192.168.50.75 www.kokaruk.com
 192.168.50.75 ap.kokaruk.com
@@ -29,6 +30,7 @@ Use pi hole to resolve local dns
 192.168.50.75 staging.kokaruk.com
 192.168.50.75 wp.kokaruk.com
 192.168.50.75 istqb.kokaruk.com
+```
 
 3. Create a new dnsmasq conf file -- sudo vi /etc/dnsmasq.d/02-mydns.conf.
 4. Add one line -- addn-hosts=/etc/hosts.kokaruk. Write out and exit.
