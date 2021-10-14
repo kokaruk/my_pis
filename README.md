@@ -97,6 +97,7 @@ POWERLEVEL9K_MODE="nerdfont-complete"
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(virtualenv dir vcs)
 POWERLEVEL9K_PYTHON_ICON="\U1F40D"
+ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status background_job os_icon time)
 ```
 
 b) change theme
@@ -131,3 +132,12 @@ add to zshrc: ```alias cow="fortune | cowsay | lolcat"```
 
 make cow every time terminal starts append 'cow'at the end of zshrc
 
+### update installed plugins, themes, etc. 
+
+```
+omz update
+git -C ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k pull
+git -C ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions pull
+git -C ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting pull
+git -C ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-completions pull
+```
